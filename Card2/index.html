@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+        referrerpolicy="no-referrer" />
+    <title>Person Card</title>
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Nunito+Sans:wght@200;300;400;600;700&display=swap');
+
+    body {
+        font-family: Nunito Sans;
+    }
+</style>
+
+<body class="bg-gray-200">
+    <div class="w-full h-full flex items-center justify-center mt-16">
+        <div class="bg-white px-16 py-12 rounded-xl">
+            <img class="block mx-auto w-32" src="./assets/Avatar.png" alt="">
+            <p class="py-2 px-4 text-center w-min block mx-auto mt-10 rounded-xl border-black text-black"
+                style="border:  1px solid black;">PRO
+            </p>
+            <h1 class=" font-sans font-bold text-xl text-center mt-4">Neel Deshmukh</h1>
+            <p class="text-xl font-light text-center mt-1">Fullstack Developer @Sky</p>
+            <ul class="grid grid-cols-5 w-3/4 gap-2 mx-auto mt-6">
+                <li class="mx-auto w-"><img src="./assets/GithubLogo.png" alt=""></li>
+                <li class="mx-auto w-"><img src="./assets/LinkedinLogo.png" alt=""></li>
+                <li class="mx-auto w-"><img src="./assets/InstagramLogo.png" alt=""></li>
+                <li class="mx-auto w-"><img src="./assets/FacebookLogo.png" alt=""></li>
+                <li class="mx-auto w-"><img src="./assets/DribbbleLogo.png" alt=""></li>
+            </ul>
+            <div class="grid grid-cols-2 gap-2 mt-8 w-5/7 mx-auto">
+                <button class="border-2 border-blue-400 px-2 py-2 rounded-xl text-blue-600">Message</button>
+                <button class="border-2 border-blue-400 bg-blue-400 px-2 py-2 rounded-xl text-white">Connect</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
