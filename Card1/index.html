@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | NFT preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    :root {
+      --soft-blue: hsl(215, 51%, 70%);
+      --cyan: hsl(178, 100%, 50%);
+      --main-bg: hsl(217, 54%, 11%);
+      --card-bg: hsl(216, 50%, 16%);
+      --line: hsl(215, 32%, 27%);
+      --white: hsl(0, 0%, 100%);
+      --font-p: 18px;
+      --Mobile: 375px;
+      --Desktop: 1440px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Outfit;
+      background: var(--main-bg);
+      height: 90vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--Desktop);
+      margin: 0 auto;
+      display: grid;
+      height: 100%;
+      place-items: center;
+    }
+
+    .card {
+      width: 320px;
+      padding: 20px;
+      background: var(--card-bg);
+      border-radius: 10px;
+    }
+
+    .card .card__img img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .card .card__title {
+      color: white;
+      margin-top: 12px;
+      font-size: 20px;
+    }
+
+    .card .card__subtitle {
+      color: rgb(199, 199, 199);
+      margin-top: 12px;
+      font-weight: 300;
+    }
+
+    .card .card__info {
+      margin-top: 12px;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      color: var(--cyan);
+    }
+
+    .card .card__info>div {
+      display: flex;
+      align-items: center;
+    }
+
+    hr {
+      margin-top: 12px;
+      border: 0;
+      height: 1px;
+      background-color: var(--line);
+    }
+
+    .card .card__creator {
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+      color: var(--cyan);
+      font-weight: 300;
+    }
+
+    .card .card__creator img {
+      width: 34px;
+      border-radius: 100px;
+      border: 2px solid white;
+      margin-right: 10px;
+    }
+
+    .card .card__creator span {
+      color: var(--white);
+    }
+
+    .attribution {
+      color: var(--white);
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body class="">
+
+  <div class="container">
+    <div class="card">
+      <div class="card__img">
+        <img src="./images/image-equilibrium.jpg" alt="">
+      </div>
+      <div class="card__title">
+        Equilibrium #3429
+      </div>
+      <div class="card__subtitle">
+        Our Equilibrium collection promotes balance and calm.
+      </div>
+      <div class="card__info">
+        <span> 0.041 ETH</span>
+        <div><img src="./images/icon-clock.svg" alt=""> 3 days left</div>
+      </div>
+      <hr>
+      <div class="card__creator">
+        <img src="./images/image-avatar.png" alt="">
+        Creation of <span>Jules Wyvern</span>
+      </div>
+    </div>
+  </div>
+  <div class=" attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Panfile Kirill</a>.
+  </div>
+</body>
+
+</html>
