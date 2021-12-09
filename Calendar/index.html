@@ -12,17 +12,44 @@
     <title>Document</title>
 </head>
 
+<style>
+    .w-card {
+        width: 100%;
+        max-width: 700px;
+    }
+</style>
+
 <!-- Body -->
 
-<body>
-
-
-
+<body class="bg-gray-100">
+    <div class="flex justify-center items-center h-screen" id="app">
+        <div class="bg-white sm:p-12 p-8 w-card">
+            <div class="grid grid-cols-3 content-between">
+                <div class=" w-full font-bold text-2xl col-span-2">{{currentDate}}</div>
+                <div class=" text-center relative">
+                    <button @click="month+=1" class="bg-gray-50 mx-1 w-1/4 float-right"><i
+                            class="fa-solid fa-arrow-right"></i></button>
+                    <button @click="month-=1" class="bg-gray-50 mx-1 w-1/4 float-right"><i
+                            class="fa-solid fa-arrow-left"></i></button>
+                </div>
+            </div>
+            <div class=" m-0 px-2 grid grid-cols-7 text-center mt-10">
+                <div class="text-gray-400" v-for="(item, index) in weekDays" :key="index">{{item}}</div>
+            </div>
+            <div class="m-0 px-2 grid grid-cols-7 mt-10 text-center">
+                <div v-for="(item, index) in getDaysInMonth()" :key="index" class="mt-2"
+                    v-bind:class="{ 'bg-blue-600 text-white rounded-md' : checkCurrentDay(item)}">{{item}}</div>
+            </div>
+        </div>
+    </div>
     <!-- scripts -->
     <!-- vueJs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.24/vue.cjs.js"
-        integrity="sha512-2e2aXOh4/FgkCAUyurkjk0Uw4m1gPcExFwb1Ai4Ajjg97se/FEWfrLG1na4mq8cgOzouc8qLIqsh0EGksPGdqQ=="
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"
+        integrity="sha512-fzff82+8pzHnwA1mQ0dzz9/E0B+ZRizq08yZfya66INZBz86qKTCt9MLU0NCNIgaMJCgeyhujhasnFUsYMsi0Q=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./index.js"></script>
 </body>
 
 </html>
