@@ -10,7 +10,7 @@ Vue.createApp({
         }
     },
     methods: {
-        getDaysInMonth(month, year) {
+        getDaysInMonth() {
             let arr = []
             let firstDay = new Date(this.year, this.month, 1).getUTCDay();
             for (let i = 0; i <= firstDay;i++) arr.push(' ')
