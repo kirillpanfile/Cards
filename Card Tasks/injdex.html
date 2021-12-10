@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+        referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+
+<style>
+    .w-card {
+        width: 100%;
+        max-width: 500px;
+    }
+</style>
+
+<!-- Body -->
+
+<body class="bg-gray-100 grid grid-cols-8" id="app">
+    <div class="flex justify-center items-center h-screen col-span-7 overflow-auto">
+        <div class="bg-white sm:p-12 p-8 w-card rounded-2xl">
+            <h1 class=" text-3xl font-semibold mb-8">Daily Tasks</h1>
+            <div class="grid grid-cols-6 mt-4">
+                <div class="flex items-center">
+                    8:00
+                </div>
+                <div class="col-span-5 bg-blue-500 text-white px-4 py-2 rounded-2xl">
+                    <div>
+                        💻 Working on SocialLens <br>
+                        <span class="text-gray-300">8:00 - 9:00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-6 mt-4">
+                <div class="flex items-center">
+                    9:00
+                </div>
+                <div class="col-span-5 bg-yellow-600 text-white px-4 py-2 rounded-2xl">
+                    <div>
+                        ✏ Design Team Standup <br>
+                        <span class="text-gray-300">9:00 - 10:00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-6 mt-4">
+                <div class="flex items-center">
+                    10:00
+                </div>
+                <div class="col-span-5 bg-red-500 text-white px-4 py-2 rounded-2xl">
+                    <div>
+                        🍽 Take launch with the team <br>
+                        <span class="text-gray-300">9:00 - 10:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex md:min-h-screen w-full col-span-1 justify-end">
+        <div
+            class="flex flex-col w-full md:w-64 text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800 flex-shrink-0">
+            <div class="flex-shrink-0 px-8 py-4 flex flex-row items-center justify-between">
+                <h1 class="text-xl font-semibold">Create a new task</h1>
+            </div>
+            <nav class="flex-grow md:block px-4 pb-4 md:pb-0 md:overflow-y-auto">
+                <form action="" @submit:prevent="">
+                    <span>Enter task time</span>
+                    <input type="text" class="rounded-3xl px-4 py-1" style="border:1px solid rgba(0, 0, 0, 0.397);">
+                    <span>Enter task description</span>
+                    <input type="text" class=" rounded-3xl px-4 py-1" style="border:1px solid rgba(0, 0, 0, 0.397);">
+                    <span>Enter task ending time</span>
+                    <input type="text" class="rounded-3xl px-4 py-1" style=" border:1px solid rgba(0, 0, 0, 0.397);">
+                    <select name="" id="">
+                        <option value="1">💻</option>
+                        <option value="1">1</option>
+                        <option value="1">1</option>
+                        <option value="1">1</option>
+                        <option value="1">1</option>
+                        <option value="1">1</option>
+                        <option value="1">1</option>
+
+                    </select>
+                </form>
+            </nav>
+        </div>
+    </div>
+    <!-- scripts -->
+    <!-- vueJs -->
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"
+        integrity="sha512-fzff82+8pzHnwA1mQ0dzz9/E0B+ZRizq08yZfya66INZBz86qKTCt9MLU0NCNIgaMJCgeyhujhasnFUsYMsi0Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
