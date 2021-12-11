@@ -6,8 +6,8 @@ const app = Vue.createApp({
             newIcon: '',
             endTime: '',
             newColor: '',
-            time: ['0:00', '1:00', '2:00', '3:00', '4:00', '5:00', '6:00', '7:00', '8:00', '9:00', '10:0', '11:0', '12:0', '13:0', '14:0', '15:0', '16:0', '17:0', '18:0', '19:0', '20:0', '21:0', '22:0', '23:0'],
-            icons: [],
+            time: ['0:00', '1:00', '2:00', '3:00', '4:00', '5:00', '6:00', '7:00', '8:00', '9:00', '10:0', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'],
+            icons: [''],
             colors: [],
             tasks: [{
                 time: '8:00',
@@ -37,7 +37,13 @@ const app = Vue.createApp({
         if (localStorage.getItem('tasks'))
             this.tasks = JSON.parse(localStorage.getItem('tasks'))
     },
+    updated() {
+        console.log(1);
+    },
     methods: {
+        updateLocalStorage() {
+            localStorage.setItem('tasks',JSON.stringify(this.tasks))
+        },
         addNewTask() {
                 let obj = {}
                 obj.time = this.startTime
@@ -45,9 +51,14 @@ const app = Vue.createApp({
                 obj.icon = this.newIcon
                 obj.color = this.newColor
                 obj.hours = this.startTime + '-' + this.endTime
-                obj.time != '' && obj.title !='' && obj.icon != '' && obj.color != ''  ?  
-                this.tasks.push(obj) : void (0)
-                localStorage.setItem('tasks',JSON.stringify(this.tasks))
+            if (obj.time != '' && obj.title != '' && obj.icon != '' && obj.color != '') {
+                this.tasks.push(obj)
+                this.updateLocalStorage()
+            }
+        },
+        removeTask(index) {
+            this.tasks.splice(index, 1)
+            this.updateLocalStorage()
         }
     },
 }).mount('#app')
