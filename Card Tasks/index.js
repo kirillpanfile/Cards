@@ -36,13 +36,15 @@ const app = Vue.createApp({
         if (localStorage.getItem('tasks'))
             this.tasks = JSON.parse(localStorage.getItem('tasks'))
     },
-    updated() {
-        console.log(1);
-    },
+  watch: {
+    tasks: {
+      handler: function (val, oldVal) {
+        localStorage.setItem('tasks',JSON.stringify(this.tasks))
+      },
+      deep: true
+    }
+  },
     methods: {
-        updateLocalStorage() {
-            localStorage.setItem('tasks',JSON.stringify(this.tasks))
-        },
         addNewTask() {
                 let obj = {}
                 obj.time = this.startTime
@@ -52,12 +54,10 @@ const app = Vue.createApp({
                 obj.hours = this.startTime + '-' + this.endTime
             if (obj.time != '' && obj.title != '' && obj.icon != '' && obj.color != '') {
                 this.tasks.push(obj)
-                this.updateLocalStorage()
             }
         },
         removeTask(index) {
             this.tasks.splice(index, 1)
-            this.updateLocalStorage()
         }
     },
 }).mount('#app')
